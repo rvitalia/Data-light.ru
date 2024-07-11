@@ -1,0 +1,87 @@
+// @import 'vendor/reset';
+@import 'blocks/vars';
+@import 'mixins';
+// @import "./vendor/animate";
+
+
+@import 'fonts';
+@import 'settings';
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.main {
+  height: 100%;
+  flex: 1 0 auto;
+  transition: all 0.3s linear;
+
+  & .section:first-of-type{
+    margin-top: 80px;
+  }
+}
+
+ body:has(.open){
+  overflow: hidden;
+}
+
+.page {
+  &:has(.menu-item-has-children:hover) {
+    & .overlay {
+      background: rgba(0, 0, 0, 0.65);    
+    }
+
+    & .header {
+      position: relative;
+      z-index: 10;
+    }
+
+    & .section{
+      position: relative;
+      z-index: -1;
+    }
+  }
+  &:has(.open) {
+    & .overlay {
+      background: rgba(0, 0, 0, 0.65);
+     
+    }
+
+    & .header {
+      position: relative;
+      z-index: 10;
+    }
+
+    & .section{
+      position: relative;
+      z-index: -1;
+    }
+  }
+}
+
+.overlay{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: all 0.3s linear;
+}
+
+// ======blocks=========
+
+@import 'blocks/container';
+@import 'blocks/page';
+@import 'blocks/header';
+@import 'blocks/hero';
+@import 'blocks/types';
+@import 'blocks/tools';
+@import 'blocks/areas';
+
+
+
+@import 'blocks/footer';
